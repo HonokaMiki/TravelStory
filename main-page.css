@@ -1,0 +1,1347 @@
+@charset "UTF-8";
+
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, address,
+ul, ol, li, dl, dt, dd, img, form, table, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 100%;
+	text-align: left;
+	list-style-type: none;
+	border-collapse: collapse;
+}
+
+textarea { font-size: 100%; vertical-align:middle;}
+img { border-style: none; display: block; }
+hr { display: none; }
+em{font-style: normal}
+input{line-height:auto;vertical-align:middle;}
+strong.more{color:#c30}
+a{text-decoration: none;}
+
+
+
+body {
+	font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* 上の部分は気にせずここから書く */
+
+/* サイト全体--------------------------------*/
+
+.jump {
+    width: 130px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 17px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    border: none;
+    opacity: 0;
+	transform: translateY(50px);
+}
+
+.jump.up-move {
+    animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.jump.down-move {
+    animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+}
+
+/* .top-news-list-left--------------------------------*/
+
+
+.top-news-list-left {
+    display: flex;
+    padding: 150px;
+    margin: 20px;
+    text-align: center;
+    font-size: 24px; /* テキストのサイズを大きくする */
+    justify-content: center; /* 要素を中央に配置する */
+    border: 20px solid black;
+    background-color: rgb(229, 224, 224);
+    
+}
+
+
+.newsbutton{
+    background-color: rgb(229, 224, 224);
+
+}
+
+
+
+
+
+/* .notice--------------------------------*/
+.notice {
+    width: 100%;
+    line-height: 60px;
+    background-color: black;
+    position: relative;
+}
+.notice p {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    text-decoration: underline 1px white;
+}
+.notice p:hover {
+    color: rgb(200, 200, 200);
+    text-decoration: underline rgb(200, 200, 200);
+    cursor:pointer
+}
+
+/* HEADER--------------------------------*/
+.responsive-nav {
+    display: none;
+}
+.res-nav {
+    display: none;
+}
+header {
+    width: 100%;
+    position: absolute;
+	z-index:20;
+    transition: 0.5s;
+}
+header.transform {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top:0;
+}
+.header-nav {
+    width: 100%;
+    height: 65px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 15px;
+    position: relative;
+}
+
+.nav-between {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-between a {
+    display: block;
+    z-index: 10;
+}
+
+.header-nav img {
+    height: auto;
+    width: 70px;
+    object-fit: cover;
+}
+
+.header-button {
+    color: white;
+    padding-top: 12px;
+    background-color: transparent;
+    border: none;
+    z-index: 10;
+}
+.header-button:hover {
+    color: rgb(200, 200, 200);
+    cursor:pointer
+}
+
+.header-list{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    left: 0;
+    padding-top: 27px;
+}
+
+.header-list a {
+    color: white;
+}
+.header-list a:hover {
+    color: rgb(200, 200, 200);
+    cursor:pointer
+}
+
+
+.header-list li {
+    color: white;
+    text-align: center;
+    padding: 0 25px;
+}
+.header-list li:hover {
+    color: rgb(200, 200, 200);
+    cursor:pointer
+}
+
+
+/* HOME-CONTENT--------------------------------*/
+.home-content img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    position: relative;
+    opacity: 1.0;
+    background-color: white;
+    border-width: 50px; 
+    border-style: solid;
+    border-color: black;
+}
+
+
+.home-content h1 {
+    color: black;
+    font-size: 100px;
+    position: absolute;
+    top: 300px;
+    font-weight: 900;
+    margin-left: 5%;
+    line-height: 100%;
+    opacity: 0.8;
+    font-family: Georgia;
+}
+
+/* us--------------------------------*/
+
+.us {
+    position: relative;
+  }
+  
+  .backus {
+    position: relative;
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 100px;
+    border-radius: 5px;
+  }
+  
+  h4 {
+    font-size: 24px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+
+/* .car-time--------------------------------*/
+.car-time {
+    width: 100%;
+    
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.car-top {
+    display: flex;
+}
+.car-under {
+    display: flex;
+    padding-top: 20px;
+}
+.car-content {
+    display: flex;
+    width: 25%;
+}
+
+.car-content img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.car-content p {
+    font-size: 14px;
+    font-weight: 800;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+/* .hotel--------------------------------*/
+
+
+.hotelcountry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7); /* 白色を70%透明に調整 */
+    padding: 20px; /* フォームの内側にスペースを作成 */
+    max-width: 1600px; /* フォームの幅を制限 */
+    margin: 0 auto; /* フォームを水平方向に中央に配置 */
+    border-radius: 5px;
+    width: 100%;
+}
+  
+.title {
+    flex-basis: 100%;
+    font-size: 100px;
+    padding-top: 100px;
+    text-align: center;
+    background-color: #214d80;
+    font-family: Georgia;
+}
+  
+  
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+  
+select,
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #214d80;
+    border-radius: 3px ;
+
+}
+
+.searchform{
+   padding-right: 100px;
+}
+
+.searchform1{
+    padding-right: 100px;
+    padding-left: 100px;
+}
+  
+button[type="submit"] {
+    background-color: #214d80;
+    color: #fff;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: auto;
+    font-size: large;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+  
+button[type="submit"]:hover {
+    background-color: #1a3b66;
+}
+
+h5{
+    padding-top: 100px;
+    line-height: 34px;
+    text-align: left;
+    padding-bottom: 24px;
+    color: #0f294d;
+    font-weight: 700;
+    margin: 0;
+    font-size: 28px;
+}
+
+h6{
+    padding-top: 100px;
+    line-height: 34px;
+    text-align: center;
+    padding-bottom: 24px;
+    color: #0f294d;
+    font-weight: 700;
+    margin: 0;
+    font-size: 28px;
+
+}
+
+/*==================================================
+hotelsearch
+===================================*/
+
+.hotel-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: 0 auto;
+}
+
+.hotel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+
+
+
+.hotel-image {
+    width: 70%;
+    height: auto;
+    max-height: 200px; /* 画像の最大高さを指定して、画像の比率を保持します */
+    object-fit: cover; /* 画像をコンテナに合わせてリサイズして表示します */
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.select-button {
+    /* 選択ボタンのスタイル */
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+
+/* .ticket--------------------------------*/
+
+
+.ticketcountry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7); /* 白色を70%透明に調整 */
+    padding: 20px; /* フォームの内側にスペースを作成 */
+    max-width: 1700px; /* フォームの幅を制限 */
+    margin: 0 auto; /* フォームを水平方向に中央に配置 */
+    border-radius: 5px;
+    width: 100%;
+}
+  
+
+
+
+
+
+/*==================================================
+popcity
+===================================*/
+
+.popcity img {
+    width:100%;/*スライダー内の画像を横幅100%に*/
+    height:auto;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.popcity .popcity-slide {
+    margin:0 10px;/*スライド左右の余白調整*/
+}
+
+.popcity li {
+    width: 200px; /* 画像の幅を指定 */
+    height: 500px; /* 画像の高さを指定 */
+    overflow: hidden; /* 画像のはみ出しを制御 */
+}
+
+.popcity li img {
+    width: 100%; /* 画像を親要素(li)の幅いっぱいに広げる */
+    height: 100%; /* 画像を親要素(li)の高さいっぱいに広げる */
+    object-fit: cover; /* 画像を切り抜いて表示する（アスペクト比を維持） */
+}
+
+/*==================================================
+スライダー２のためのcss
+===================================*/
+.slider2 {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+     margin:0 auto;
+ }
+ 
+ .slider2 img {
+     width:100%;/*スライダー内の画像を横幅100%に*/
+     height: 300px;
+ }
+ 
+ /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+ 
+ .slider2 .slick-slide {
+     margin:0 10px;
+ }
+ 
+ /*矢印の設定*/
+ 
+ /*戻る、次へ矢印の位置*/
+ .slick-prev, 
+ .slick-next {
+     position: absolute;/*絶対配置にする*/
+     top: 42%;
+     cursor: pointer;/*マウスカーソルを指マークに*/
+     outline: none;/*クリックをしたら出てくる枠線を消す*/
+     border-top: 2px solid #666;/*矢印の色*/
+     border-right: 2px solid #666;/*矢印の色*/
+     height: 15px;
+     width: 15px;
+ }
+ 
+ .slick-prev {/*戻る矢印の位置と形状*/
+     left: -1.5%;
+     transform: rotate(-135deg);
+ }
+ 
+ .slick-next {/*次へ矢印の位置と形状*/
+     right: -1.5%;
+     transform: rotate(45deg);
+ }
+ 
+ /*ドットナビゲーションの設定*/
+ 
+ .slick-dots {
+     text-align:center;
+     margin:20px 0 0 0;
+ }
+ 
+ .slick-dots li {
+     display:inline-block;
+     margin:0 5px;
+ }
+ 
+ .slick-dots button {
+     color: transparent;
+     outline: none;
+     width:8px;/*ドットボタンのサイズ*/
+     height:8px;/*ドットボタンのサイズ*/
+     display:block;
+     border-radius:50%;
+     background:#ccc;/*ドットボタンの色*/
+ }
+ 
+ .slick-dots .slick-active button{
+     background:#333;/*ドットボタンの現在地表示の色*/
+ }
+ 
+
+
+.advtitle{
+    color: #07080a;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.goto{
+    font-size: 15px;
+    text-align: left;
+}
+
+
+.faq-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 50px;
+    background-color: #f0f0f0;
+  }
+  
+  .faq-item {
+    margin-bottom: 10px;
+  }
+  
+  .faq-item input[type="checkbox"] {
+    display: none;
+  }
+  
+  .faq-item label {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .faq-content {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .faq-item input[type="checkbox"]:checked + label + .faq-content {
+    display: block;
+  }
+
+/* .experience--------------------------------*/
+.experience {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: black;
+}
+
+
+
+.experience h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.experience h2 {
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    padding-bottom: 25px;
+}
+
+.experience{
+    background-color: black;
+}
+
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+}
+
+.slider img {
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+}
+
+.slider .slick-slide {
+	transform: scale(0.8);/*左右の画像のサイズを80%に*/
+	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+	opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+.countryname {
+    color: white;
+    font-size: 50px;
+}
+
+
+/* .host--------------------------------*/
+
+
+
+/* .footer--------------------------------*/
+footer {
+    padding: 40px 5% 50px 5%;
+    background-color: rgb(244, 244, 244);
+    border-top: 1px solid rgb(200, 200, 200);
+}
+
+.footer-top {
+    width: 100%;
+    display: flex;
+}
+
+.footer-content {
+    width: 100%;
+}
+.footer-content li {
+    padding-bottom: 15px;
+    font-size: 15px;
+    color: rgb(43, 43, 43);
+    display: block;
+}
+.footer-content li:hover {
+    color:rgb(108, 108, 108);
+    cursor:pointer
+}
+
+.footer-under {
+    border-top: 1px solid rgb(200, 200, 200);
+    padding-top: 20px;
+}
+.footer-under p {
+    color:rgb(43, 43, 43);
+    font-size: 15px;
+    text-align: left;
+}
+
+.footer-under ul {
+    display: flex;
+}
+.footer-under li {
+    color:rgb(43, 43, 43);
+    font-size: 15px;
+}
+.footer-under li:hover {
+    color:rgb(108, 108, 108);
+    cursor:pointer
+}
+
+.footer-title {
+    font-weight: 900;
+}
+
+
+
+
+/* ホテルランキング */
+
+
+  .hotel-ranking {
+    display: block;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* ホテルアイテム */
+  .hotel-rankingitem {
+    width: 700px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* ランキング番号 */
+.ranking-number {
+  font-size: 100px;
+  font-weight: Georgia;
+  color: #ff0000;
+}
+  
+  .hotel-rankingitem:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ホテル画像 */
+  .hotel-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* ホテル名 */
+  .hotel-rankingitem h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  /* エリア */
+  .hotel-rankingitem p:nth-of-type(2) {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0;
+  }
+  
+  /* レビュー数と評価 */
+  .hotel-rankingitem p:nth-of-type(3),
+  .hotel-rankingitem p:nth-of-type(4) {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  /* 詳細情報リンク */
+  .hotel-rankingitem p:nth-of-type(5) {
+    font-size: 14px;
+    color: #007bff;
+    margin: 5px 0;
+  }
+  
+
+  
+
+
+
+
+
+/* CONTACT FORM--------------------------------*/
+form {
+    width: 60%;
+    margin: 50px auto;
+    margin-top: 120px;
+    border: 1px solid rgb(183, 183, 183);
+    border-radius: 15px;
+}
+
+form h1 {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    padding: 17px 0;
+    border-bottom: 1px solid rgb(183, 183, 183);
+}
+
+
+.form-question {
+    background-color: rgb(240, 240, 240);
+    padding: 7px 5px;
+    border-top: 1px solid rgb(108, 108, 108);
+    border-bottom: 1px solid rgb(108, 108, 108);
+}
+
+.form-text {
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+
+.red-point {
+    color: red;
+}
+
+.form-item {
+    padding: 10px 0;
+    text-align: left;
+}
+
+.form-content input {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid rgb(183, 183, 183);
+}
+
+.form-content input::placeholder {
+    font-size: 20px;
+}
+
+.question2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.form-content textarea {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    border: 1px solid rgb(183, 183, 183);
+    resize: none;
+}
+
+.button-contact {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(224, 34, 113);
+    border-radius: 10px;
+    border: 0px solid;
+    margin-top: 25px;
+}
+
+.error-msg {
+    color: red;
+    font-size: 15px;
+}
+
+
+/* CONTACT FORM  (confirm.php)--------------------------------*/
+.button {
+    display: flex;
+}
+.button-firm {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(224, 34, 113);
+    border-radius: 10px;
+    border: 0px solid;
+    margin-top: 10px;
+}
+.button-back {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    background-color: white;
+    color: green;
+    border: 2px solid green;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 8px;
+    text-decoration: none !important;
+}
+
+/* CONTACT FORM  (complete.php)--------------------------------*/
+.form-content a {
+    text-decoration: underline;
+}
+
+
+
+/* .sign-in--------------------------------*/
+.sign-page {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.sign-content {
+    margin-top: 20px;
+}
+
+.sign-item {
+    margin-bottom: 20px;
+}
+
+.sign-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.sign-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-icon {
+    margin: 0 5px; /* Add some space between the icons */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sign-icon img {
+    width: 24px; /* Adjust the size of the icons as needed */
+}
+
+.formlogin{
+    border: none;
+}
+
+
+
+/* sign-up--------------------------------*/
+
+
+.sign-up-content {
+    padding: 50px;
+  }
+  
+  .sign-up-item {
+    margin-bottom: 20px;
+    margin: 50px;
+  }
+  
+  .sign-up-input {
+    width: 100%;
+    height: 45px;
+    display: block;
+    border: 1px solid rgb(183, 183, 183);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .error-msg {
+    color: red;
+  }
+  
+  .sign-up-button {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(224, 34, 113);
+    border-radius: 10px;
+    border: 0px solid;
+    padding-top: 5px;
+    text-align: center;
+  }
+
+.logout-button{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(21, 144, 46);
+    border-radius: 10px;
+    border: 0px solid;
+    padding-top: 5px;
+    text-align: center;
+}
+
+
+
+
+
+
+/* データベース表示--------------------------------*/
+table {
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(226, 226, 226);
+    margin-bottom: 30px;
+    position: relative;
+} 
+table tr {
+    width: 100%;
+    
+}
+table th {
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0 10px; 
+}
+.table-title th {
+    text-align: center;
+    background-color: rgb(145, 145, 145);
+    color: white;
+}
+
+
+/* 編集画面更新ボタン--------------------------------*/
+.button-update {
+    margin-top: 30px;
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(224, 34, 113);
+    border-radius: 10px;
+    border: 0px solid;
+}
+
+
+/* データベース情報削除のポップ--------------------------------*/
+.delete-pop {
+    position: absolute;
+    left: 60%;
+    top: 110%;
+    width: 300px;
+    height: 150px;
+    background-color: rgb(226, 226, 226);
+    z-index: 60;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgb(146, 146, 146);
+    display: none;
+}
+.delete-form {
+    width: 100%;
+    border: none;
+    border-radius: none;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.delete-pop p {
+    text-align: center;
+    padding-top: 15px;
+}
+.delete-item {
+    display: flex;
+    justify-content: center;
+}
+.delete-button {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    width: 90px;
+    height: 40px;
+}
+
+
+.active3 {
+    display: block;
+    visibility: visible;
+}
+
+.background {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 28;
+    display: none;
+}
+.background.active2 {
+    display:block
+}
+
+
+/* 予約状況リストのスタイル */
+
+.retitle{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.restatus {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+.reli {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  /* リンクのスタイル */
+  .rea {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+
+
+
+
+/* メディアクエリ--------------------------------*/
+@media screen and (max-width:800px) {
+    header {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        
+    } 
+    .header-nav {
+        display: none;
+    }
+    .responsive-nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+    .res-logo {
+        padding-top: 10px;
+        size: small;
+    }
+    .res-menu {
+        width: 45px;
+        height: 45px;
+        filter: contrast(70%);
+        position: relative;
+        z-index: 60;
+    }
+    .res-menu:hover {
+        opacity: 0.7;
+    }
+
+    .res-nav {
+        position: absolute;
+        display: none;
+        top: 65px;
+        right: 45px;
+        width: 200px;
+        height: auto;
+        background-color: rgb(244, 244, 244);
+        margin: 0 0 0 auto;
+        border-radius: 10px;
+        margin-top: 5px;
+    }
+    .show {
+        display: block;
+    }
+    
+    .header-button {
+        width: 100%;
+        padding: 10px 0 10px 15px;
+        margin: 0 0 ;
+        color: black;
+        border-bottom: 1px solid rgb(200, 200, 200);
+        font-size: 15px;
+        text-align: left;
+    }
+    .header-list {
+        display: block;
+        position: static;
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
+    .header-list li {
+        text-align: left;
+        padding: 0 0 0 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .header-list a {
+        color: black;
+
+    }
+
+
+    .car-time {
+        display: flex;
+    }
+    .car-top {
+        display: block;
+        width: 50%;
+    }
+    .car-under {
+        width: 50%;
+        display: block;
+        padding-top: 0;
+    }
+    .car-content { 
+        width: 100%;
+        margin-top: 15px;
+    }
+    .car-content p {
+        width: 100px;
+    }
+
+
+    .sign-page {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 15%;
+    }
+
+}
